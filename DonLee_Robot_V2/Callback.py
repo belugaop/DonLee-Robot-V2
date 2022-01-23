@@ -38,37 +38,61 @@ async def cb_handler(client, query):
 
     elif query.data == "help":
         button = [[
-          Import.Button("𝖠𝗎𝗍𝗈𝖥𝗂𝗅𝗍𝖾𝗋", callback_data="autofilter"),
-          Import.Button("𝖬𝖺𝗇𝗎𝖺𝗅𝖥𝗂𝗅𝗍𝖾𝗋", callback_data="filter"),
-          Import.Button("𝖢𝗈𝗇𝗇𝖾𝖼𝗍𝗂𝗈𝗇𝗌", callback_data="connection")
+          Import.Button("ADMIN SETTIING", callback_data="ADMIN"),
+          Import.Button("ADVANCE  SETTIING ", callback_data="ADV")
           ],[
-          Import.Button("𝖡𝖺𝗇", callback_data="ban"),
-          Import.Button("𝖬𝗎𝗍𝖾", callback_data="mute"),
-          Import.Button("𝖯𝗎𝗋𝗀𝖾", callback_data="purge")
+          Import.Button("FUN ", callback_data="FUN"),
+          Import.Button("EXTRA", callback_data="EXTRA")
           ],[
-          Import.Button("𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝖯𝗁", callback_data="telegraph"),
-          Import.Button("𝖳𝖳𝖲", callback_data="tts"),
-          Import.Button("𝖲𝗍𝗂𝖼𝗄𝖾𝗋 𝖨𝖽", callback_data="sticker")
-          ],[
-          Import.Button("𝖢𝗈𝗎𝗇𝗍𝗋𝗒", callback_data="country"),
-          Import.Button("𝖬𝖾𝗆𝖾", callback_data="meme")
-          ],[
-          Import.Button("𝖢𝗈𝗏𝗂𝖽", callback_data="covid"),
-          Import.Button("𝖱𝖾𝗉𝗈𝗋𝗍", callback_data="report"),
-          Import.Button("𝖶𝖾𝗅𝖼𝗈𝗆𝖾", callback_data="welcome")
-          ],[
-          Import.Button("🏠𝖧𝗈𝗆𝖾", callback_data="home"),
           Import.Button("𝖲𝗍𝖺𝗍𝗎𝗌", callback_data="status"),
-          Import.Button("𝖠𝖻𝗈𝗎𝗍🤠", callback_data="about")
+          Import.Button("𝖠𝖻𝗈𝗎𝗍🤠", callback_data="about"),
+          Import.Button("🏠𝖧𝗈𝗆𝖾", callback_data="home")
           ]]
         await query.message.edit_text(Text.HELP_TEXT, reply_markup=Import.Markup(button))
 
-    elif query.data == "about":
+   elif query.data == "ADMIN":
         button = [[
-          Import.Button("👨‍💻𝖣𝖾𝗉𝗅𝗈𝗒", url='https://www.youtube.com/watch?v=NrbMc93aCzA'),
-          Import.Button("𝖲𝗈𝗎𝗋𝖼𝖾📦", callback_data="source")
-          ],[
+          Import.Button("𝖡𝖺𝗇", callback_data="ban"),
+          Import.Button("𝖬𝗎𝗍𝖾", callback_data="mute"),
+          Import.Button("𝖯𝗎𝗋𝗀𝖾", callback_data="purge"),
+          Import.Button("𝖱𝖾𝗉𝗈𝗋𝗍", callback_data="report"),
+          Import.Button("𝖶𝖾𝗅𝖼𝗈𝗆𝖾", callback_data="welcome")
+          ]]
+       await query.message.edit_text(Text.ADMIN_TEXT, reply_markup=Import.Markup(button))
+      
+   elif query.data == "ADV":
+        button = [[
+          Import.Button("𝖠𝗎𝗍𝗈𝖥𝗂𝗅𝗍𝖾𝗋", callback_data="autofilter"),
+          Import.Button("𝖬𝖺𝗇𝗎𝖺𝗅𝖥𝗂𝗅𝗍𝖾𝗋", callback_data="filter"),
+          Import.Button("𝖢𝗈𝗇𝗇𝖾𝖼𝗍𝗂𝗈𝗇𝗌", callback_data="connection")
+          ]]
+      await query.message.edit_text(Text.ADV_TEXT, reply_markup=Import.Markup(button))
+     
+  elif query.data == "FUN":
+        button = [[
+          
+          Import.Button("𝖬𝖾𝗆𝖾", callback_data="meme")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help"),
+          Import.Button("𝖢𝗅𝗈𝗌𝖾🗑️", callback_data="close")
+          ]]
+       await query.message.edit_text(Text.FUN_TEXT, reply_markup=Import.Markup(button))
+  
+  elif query.data == "EXTRA":
+        button = [[
+          Import.Button("𝖢𝗈𝗎𝗇𝗍𝗋𝗒 INFO", callback_data="country"),
+          Import.Button("𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝖯𝗁", callback_data="telegraph"),
+          Import.Button("𝖳𝖳𝖲", callback_data="tts"),
+          Import.Button("𝖢𝗈𝗏𝗂𝖽", callback_data="covid"),
+          Import.Button("𝖲𝗍𝗂𝖼𝗄𝖾𝗋 𝖨𝖽", callback_data="sticker"),
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help"),
+          Import.Button("𝖢𝗅𝗈𝗌𝖾🗑️", callback_data="close")
+          ]]
+       await query.message.edit_text(Text.ADV_TEXT, reply_markup=Import.Markup(button))
+ 
+ elif query.data == "about":
+        button = [[
           Import.Button("⚠️𝖧𝖾𝗅𝗉", callback_data="help"),
+          ],[
           Import.Button("🏠𝖧𝗈𝗆𝖾", callback_data="home"),
           Import.Button("𝖢𝗅𝗈𝗌𝖾🗑️", callback_data="close")
           ]]
@@ -76,8 +100,8 @@ async def cb_handler(client, query):
 
     elif query.data == "autofilter":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help"),
-          Import.Button("𝖭𝖾𝗑𝗍 ➡️", callback_data="autofilter1")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="ADV"),
+          Import.Button("MORE", callback_data="autofilter1")
           ]] 
         await query.message.edit_text(Text.AUTO_FILTER_1_TEXH, reply_markup=Import.Markup(button))
 
@@ -89,38 +113,37 @@ async def cb_handler(client, query):
 
     elif query.data == "filter":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help"),
-          Import.Button("𝖵𝗂𝖽𝖾𝗈 📽️", url="https://youtu.be/neJ4jHC9Hng")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="ADV"),
           ]]
         await query.message.edit_text(Text.FILTER_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "connection":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="ADV")
           ]]
         await query.message.edit_text(Text.CONNECTION_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "ban":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="ADMIN")
           ]]
         await query.message.edit_text(Text.BAN_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "mute":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="ADMIN")
           ]]
         await query.message.edit_text(Text.MUTE_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "pin":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="ADMIN")
           ]]
         await query.message.edit_text(Text.PIN_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "purge":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="ADMIN")
           ]]
         await query.message.edit_text(Text.PURGE_TEXT, reply_markup=Import.Markup(button))
 
@@ -136,52 +159,49 @@ async def cb_handler(client, query):
 
     elif query.data == "welcome":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="ADMIN")
           ]]
         await query.message.edit_text(Text.WELCOME_TEXT.format(Config.CUSTOM_WELCOME, Config.CUSTOM_WELCOME_TEXT), reply_markup=Import.Markup(button))
 
     elif query.data == "telegraph":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="EXTRA")
           ]]
         await query.message.edit_text(Text.TELEGRAPH_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "covid":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="EXTRA")
           ]]
         await query.message.edit_text(Text.COVID_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "tts":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="EXTRA")
           ]]
         await query.message.edit_text(Text.TTS_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "sticker":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="EXTRA")
           ]]
         await query.message.edit_text(Text.STICKER_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "source":
         button = [[
-          Import.Button("🖥️ 𝖵𝗂𝖽𝖾𝗈 🖥️", url="https://www.youtube.com/watch?v=NrbMc93aCzA"),
-          ],[
           Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="about"),
-          Import.Button("𝖢𝗋𝖾𝖽𝗂𝗍𝗌 💞", callback_data="credits")
           ]]
         await query.message.edit_text(Text.SOURCE_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "meme":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="FUN")
           ]]
         await query.message.edit_text(Text.MEME_TEXT, reply_markup=Import.Markup(button))
 
     elif query.data == "country":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="EXTRA")
           ]]
         await query.message.edit_text(Text.COUNTY_TEXT, reply_markup=Import.Markup(button))
 
@@ -193,7 +213,7 @@ async def cb_handler(client, query):
 
     elif query.data == "report":
         button = [[
-          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="help")
+          Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="ADMIN")
           ]]
         await query.message.edit_text(Text.REPORT_TEXT, reply_markup=Import.Markup(button))
 
